@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="scelte">
+        <h2>Scelte Test</h2>
+        <label for="numeroDomande">A quante domande vuoi rispondere?</label>
+        <input type="number" id="numDomande" placeholder="Numero domande" name="numeroDomande" />
+        <div id="diff">
+            <input type="radio" class="radioDifficolta" value="easy" name="difficolta" />
+            <label for="easy">easy</label>
+            <input type="radio" class="radioDifficolta" value="medium" name="difficolta" />
+            <label for="medium">medium</label>
+            <input type="radio" class="radioDifficolta" value="hard" name="difficolta" />
+            <label for="hard">hard</label>
+        </div>
+        <button id="startScelte">Start</button>
+    </div>
+    <div id="welcome" class="background">
+        <header>
+            <img src="epicode_logo.png" alt="error" class="logo" />
+
+            <h1>Welcome to <span>your exam</span></h1>
+        </header>
+        <h2>Instructions</h2>
+        <p>
+            We don't expect most engineers to know the answers to all of these<br />
+            questions, so don't worry if you're unsure of a few of them.
+        </p>
+        <ul>
+            <li>Each question is <span>timed</span> and can only be <span>answered once.</span></li>
+            <li>Changing browser tab or opening other windoews will <span> invalidate the question.</span></li>
+            <li>This exam will take approx. <span>0-5 minutes.</span></li>
+        </ul>
+        <p id="paragrafoHome">
+            <input id="homecheck" type="checkbox" />
+            <i class="fa-regular fa-square-check" style="color: #ffffff">
+                I promise to answer myself without help from anyone
+            </i>
+        </p>
+        <button id="buttonWelcom" class="button" disabled="true">PROCEED</button>
+    </div>
+
+    <div id="benchmark" class="background">
+        <img src="epicode_logo.png" alt="error" width="250px" />
+        <header>
+            <div id="timer">
+                <div id="out">
+                    <div id="in">
+                        <div id="txt"></div>
+                    </div>
+                </div>
+                <svg xmlns="http: //www.w.org/2000/svg" version="1.1" width="160px" height="160px">
+                    <circle id="cerchio1" cx="80" cy="80" r="70" stroke-linecap="round" />
+                </svg>
+                <svg xmlns="http: //www.w.org/2000/svg" version="1.1" width="160px" height="160px">
+                    <circle id="cerchio" cx="80" cy="80" r="70" stroke-linecap="round" />
+                </svg>
+            </div>
+        </header>
+        <div id="quiz"></div>
+    </div>
+
+    <div id="results">
+        <div><img src="epicode_logo.png" alt="error" class="logo" /></div>
+        <div>
+            <h1>Results</h1>
+            <h2>The summary of your answers:</h2>
+        </div>
+        <div id="mainResults">
+            <div id="correctAnswers">
+                <p>Correct</p>
+            </div>
+            <div id="grafico">
+                <svg id="grafico1" viewBox="0 0 170 170" width="400" height="400">
+                    <circle id="cerchio3" cx="50%" cy="50%" r="75" />
+                    <circle id="cerchio4" cx="50%" cy="50%" r="75" />
+                </svg>
+            </div>
+            <div id="wrongAnswers">
+                <p>Wrong</p>
+            </div>
+        </div>
+        <div id="buttonRate">
+            <button id="button3" class="button" class="button2">RATE US</button><button class="button"
+                onclick="rispUtente()">ANSWERS</button>
+        </div>
+    </div>
+
+    <div id="review" class="background">
+        <div class="logo">
+            <img src="epicode_logo.png" alt="error" class="logo" />
+        </div>
+        <h1>Tell us how it's going</h1>
+        <h2>From 0 to 10, how likely are you to racommed EPICODE <br />to a friend or a colleague?</h2>
+        <div class="divStar">
+            <div class="rateStar" title="1" onclick="star(event)"><img src="star.svg" /></div>
+            <div class="rateStar" title="2" onclick="star(event)"><img src="star.svg" /></div>
+            <div class="rateStar" title="3" onclick="star(event)"><img src="star.svg" /></div>
+            <div class="rateStar" title="4" onclick="star(event)"><img src="star.svg" /></div>
+            <div class="rateStar" title="5" onclick="star(event)"><img src="star.svg" /></div>
+            <div class="rateStar" title="6" onclick="star(event)"><img src="star.svg" /></div>
+            <div class="rateStar" title="7" onclick="star(event)"><img src="star.svg" /></div>
+            <div class="rateStar" title="8" onclick="star(event)"><img src="star.svg" /></div>
+            <div class="rateStar" title="9" onclick="star(event)"><img src="star.svg" /></div>
+            <div class="rateStar" title="10" onclick="star(event)"><img src="star.svg" /></div>
+        </div>
+
+        <h3>Leave us an open feedback about you experience so far</h3>
+        <input type="text" name="" id="inputReview" placeholder="Write your comment here" required />
+
+        <a href="https://epicode.com" target="_blank"><button class="button" id="button2">MORE INFO</button></a>
+    </div>
+    <div id="elencoRisposte">
+        <h2>Answers</h2>
+        <ol id="listaRisposte"></ol>
+        <button id="exit" onclick="hide()">&#8678;</button>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
